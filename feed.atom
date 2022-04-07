@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://xiaodaweb.github.io/</id>
+    <title>小丶达</title>
+    <updated>2022-04-07T08:09:00.024Z</updated>
+    <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
+    <link rel="alternate" href="https://xiaodaweb.github.io/"/>
+    <link rel="self" href="https://xiaodaweb.github.io/feed.atom"/>
+    <subtitle>人生路漫漫，留下一笔精彩</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Git Flow 工具的基本学习]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/02/git-flow.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/02/git-flow.html">
+        </link>
+        <updated>2022-03-01T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[上网找资料]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Git 生成 ssh]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/03/git-ssh-create.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/03/git-ssh-create.html">
+        </link>
+        <updated>2022-03-02T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Git 回退版本]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/04/git-options.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/04/git-options.html">
+        </link>
+        <updated>2022-03-03T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[postgresql 创建用户并授权]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/09/psql-create-user.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/09/psql-create-user.html">
+        </link>
+        <updated>2022-03-08T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[localStorage、sessionStorage]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/10/bom-storage.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/10/bom-storage.html">
+        </link>
+        <updated>2022-03-09T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[存储容量，不同的浏览器大小不一，大概在 5M 左右。]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[typescript 之 基础类型]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/12/ts-basic-type.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/12/ts-basic-type.html">
+        </link>
+        <updated>2022-03-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[let decLiteral: number = 16; // 十进制
+let hexLiteral: number = 0xf00d; // 十六进制
+let binaryLiteral: number = 0b1010; // 二进制
+let octalLiteral: number = 0o744; // 八进制
+`]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[typescript 之 类]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/17/ts-class.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/17/ts-class.html">
+        </link>
+        <updated>2022-03-16T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[typescript 之 函数]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/20/ts-function.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/20/ts-function.html">
+        </link>
+        <updated>2022-03-19T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[typescript 之 泛型]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/30/ts-genericity.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/30/ts-genericity.html">
+        </link>
+        <updated>2022-03-29T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[typescript 之 枚举]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/31/ts-enum.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/31/ts-enum.html">
+        </link>
+        <updated>2022-03-30T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[typescript 之 接口]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/15/ts-interface.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/15/ts-interface.html">
+        </link>
+        <updated>2022-03-14T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[typescript 之 变量声明]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/03/13/ts-variable-declare.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/03/13/ts-variable-declare.html">
+        </link>
+        <updated>2022-03-12T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[在JavaScript中，常用var声明一个变量。]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[typescript 之 类型兼容性]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/04/07/ts-type-compatbility.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/04/07/ts-type-compatbility.html">
+        </link>
+        <updated>2022-04-06T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[typescript 之 类型推论]]></title>
+        <id>https://xiaodaweb.github.io/post/2022/04/02/ts-type-deduction.html</id>
+        <link href="https://xiaodaweb.github.io/post/2022/04/02/ts-type-deduction.html">
+        </link>
+        <updated>2022-04-01T16:00:00.000Z</updated>
+    </entry>
+</feed>

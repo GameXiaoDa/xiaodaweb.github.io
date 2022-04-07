@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>typescript 之 变量声明 | 小丶达</title>
+    <link rel="shortcut icon" href="/logo.jpg"/>
+    <meta name="generator" content="VuePress 1.9.7"/>
+    <link rel="alternate" type="application/rss+xml" href="https://xiaodaweb.github.io/rss.xml" title="小丶达 RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://xiaodaweb.github.io/feed.atom" title="小丶达 Atom Feed">
+    <link rel="alternate" type="application/json" href="https://xiaodaweb.github.io/feed.json" title="小丶达 JSON Feed">
+    <meta name="description" content="人生路漫漫，留下一笔精彩">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d4b6226.css" as="style"><link rel="preload" href="/assets/js/app.69e19725.js" as="script"><link rel="preload" href="/assets/js/4.359cab9d.js" as="script"><link rel="preload" href="/assets/js/25.c6435ee4.js" as="script"><link rel="preload" href="/assets/js/8.51cdb36d.js" as="script"><link rel="prefetch" href="/assets/js/10.a847f65c.js"><link rel="prefetch" href="/assets/js/11.54984bb1.js"><link rel="prefetch" href="/assets/js/12.88f565f3.js"><link rel="prefetch" href="/assets/js/13.91e3e342.js"><link rel="prefetch" href="/assets/js/14.d8efd52b.js"><link rel="prefetch" href="/assets/js/15.86d504bd.js"><link rel="prefetch" href="/assets/js/16.d900dbb6.js"><link rel="prefetch" href="/assets/js/17.caaa48be.js"><link rel="prefetch" href="/assets/js/18.d173c369.js"><link rel="prefetch" href="/assets/js/19.b8e91840.js"><link rel="prefetch" href="/assets/js/20.71edabcf.js"><link rel="prefetch" href="/assets/js/21.451982cc.js"><link rel="prefetch" href="/assets/js/22.019ff8d9.js"><link rel="prefetch" href="/assets/js/23.e68e557d.js"><link rel="prefetch" href="/assets/js/24.4de953e0.js"><link rel="prefetch" href="/assets/js/5.9e82a8e9.js"><link rel="prefetch" href="/assets/js/6.9031de66.js"><link rel="prefetch" href="/assets/js/7.1895bdb8.js"><link rel="prefetch" href="/assets/js/9.81cb041d.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.1f10ba18.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.b98c1529.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d4b6226.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="theme-sidebar"><div class="theme-sidebar__inner"><div class="theme-header"><a href="/" class="theme-header__logo router-link-active"><img draggable="false" src="/logo.jpg" alt="logo" width="160" height="160" class="theme-header__picture"> <!----></a> <a href="/" class="theme-header__name router-link-active">
+        小丶达
+      </a> <p class="theme-header__slogan">人生路漫漫，留下一笔精彩</p></div> <div class="theme-SubNav"><a href="/archives/" class="theme-SubNav__item"><span class="theme-SubNav__count">14</span> <span class="theme-SubNav__name">Archives</span></a> <a href="/categories/" class="theme-SubNav__item"><span class="theme-SubNav__count">4</span> <span class="theme-SubNav__name">Categories</span></a> <a href="/tags/" class="theme-SubNav__item"><span class="theme-SubNav__count">7</span> <span class="theme-SubNav__name">Tags</span></a></div> <div class="theme-nav"><div class="search-box mt-7"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div> <!----></nav></div> <div class="theme-footer"><div class="social-links"><a target="_blank" rel="external nofollow noopener" title="email" href="mailto:1010161292@qq.com" class="icon-email">email</a><a target="_blank" rel="external nofollow noopener" title="github" href="https://github.com/xiaodaweb" class="icon-github">github</a><a target="_blank" rel="external nofollow noopener" title="qq" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1010161292&amp;site=qq&amp;menu=yes" class="icon-qq">qq</a></div> <p class="copyright"></p> <p class="powered"><span>Powered by <a href="https://vuepress.vuejs.org" target="_blank" rel="external nofollow noopener">VuePress</a></span> <span class="φde"> Theme - <a href="https://github.com/80maker/vuepress-theme-maker" target="_blank" rel="external nofollow noopener">Maker</a></span></p></div></div></div> <div class="theme-main"><div class="theme-main__inner post"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting"><header class="article__header"><h1 itemprop="name headline" class="post-title">
+          typescript 之 变量声明
+        </h1> <div class="post-meta"><!----> <div class="post-meta__date"><i class="icon-calendar"></i> <time pubdate itemprop="datePublished" datetime="2022-3-13">
+      Mar 13, 2022
+    </time></div> <div class="post-meta__cates"><i class="icon-cate"></i> <a href="/categories/typescript/">
+      typescript
+    </a></div> <div class="post-meta__reading"><i class="icon-time"></i>
+    1.3k words in 5 min
+  </div> <!----></div></header> <div class="article-con"><div itemprop="articleBody" class="article-content content__default copy-code-enabled"><h2 id="var-关键字"><a href="#var-关键字" class="header-anchor">#</a> var 关键字</h2> <blockquote><p>在<code>JavaScript</code>中，常用<code>var</code>声明一个变量。</p></blockquote> <h3 id="语法"><a href="#语法" class="header-anchor">#</a> 语法</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> varname1 <span class="token punctuation">[</span><span class="token operator">=</span> value1<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">,</span> varname2 <span class="token punctuation">[</span><span class="token operator">=</span>value2<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">...</span><span class="token punctuation">[</span><span class="token punctuation">,</span>varnameN<span class="token punctuation">[</span><span class="token operator">=</span> valueN<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li><code>varnameN</code>: 变量名。遵循命名规范</li> <li><code>valueN</code>: 变量的初始化值，可以是任何合法的表达式，默认值：<code>undefined</code></li></ul> <h3 id="描述"><a href="#描述" class="header-anchor">#</a> 描述</h3> <ul><li><p>变量声明，无法发生在何处，都在执行任何代码之前进行处理。</p></li> <li><p><code>var</code>声明变量的作用域是其当前的执行上下文。</p></li> <li><p>在任何函数外声明的变量为<code>全局变量</code></p></li> <li><p>在函数内声明的变量为<code>局部变量</code></p></li> <li><p>当赋值给未声明的变量时，执行赋值后，该变量会被隐式地创建为全局变量。(它将成为全局对象的属性)</p></li> <li><p>声明与未声明变量之间的差异:</p> <ol><li>声明变量的作用域限制在声明位置的上下文中。而非声明变量总是全局的。</li></ol> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  y <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> z <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 打印 1</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 报错</span>
+</code></pre></div><ol start="2"><li>声明变量在任何代码执行前创建，而非声明变量只有在执行赋值操作的时候才会被创建。</li></ol> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 抛出ReferenceError。</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'still going...'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 打印&quot;still going...&quot;。</span>
+<span class="token keyword">var</span> a<span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 打印&quot;undefined&quot;或&quot;&quot;（不同浏览器实现不同）。</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'still going...'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 打印&quot;still going...&quot;。</span>
+</code></pre></div><p>3.声明变量是其所在上下文的不可配置属性，非声明变量是可配置的(如非声明变量可以被删除)</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">;</span> <span class="token comment">// 在严格模式（strict mode）下抛出 TypeError，其他情况下执行失败并无任何提示。</span>
+<span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">.</span>b<span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 抛出 ReferenceError。</span>
+<span class="token comment">// 'b'属性已经被删除。</span>
+</code></pre></div></li></ul> <h3 id="变量提升"><a href="#变量提升" class="header-anchor">#</a> 变量提升</h3> <blockquote><p>变量声明总是在任何代码执行之前处理的，所以在代码中的任意位置声明变量总是等于在代码开发声明。意味着变量可以在声明之前使用。这就是变量提升(hoisting)。</p></blockquote> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token function">do_something</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+  <span class="token keyword">var</span> bar <span class="token operator">=</span> <span class="token number">111</span><span class="token punctuation">;</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 111</span>
+<span class="token punctuation">}</span>
+<span class="token function">do_something</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="多个变量声明-初始化"><a href="#多个变量声明-初始化" class="header-anchor">#</a> 多个变量声明，初始化</h3> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// 多个变量声明，并初始化值为&quot;A&quot;;</span>
+
+<span class="token keyword">var</span> a<span class="token punctuation">,</span>
+  b <span class="token operator">=</span> <span class="token punctuation">(</span>a <span class="token operator">=</span> <span class="token string">'A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="隐式全局变量和外部函数作用域"><a href="#隐式全局变量和外部函数作用域" class="header-anchor">#</a> 隐式全局变量和外部函数作用域</h3> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// x 是全局变量，并且赋值为0</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> z<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined 因为 z 还不存在，发生变量提升，初始化为 undefined</span>
+
+<span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 当 a 被调用时</span>
+  <span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// y 被声明称函数a作用域的变量，然后赋值称2</span>
+
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0 2</span>
+
+  <span class="token keyword">function</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// b 被调用时</span>
+    x <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">// 全局变量 x 被赋值为3，不生成全局变量。</span>
+    y <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token comment">// 已存在的外部函数的y变量被赋值为4，不生成新的全局变量。</span>
+    z <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// 创建新的全局变量z, 并赋值为5。严格模式下，会报 `ReferenceError`</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3 4 5</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用 a 同时调用了 b</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> z<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3 5</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined 因为 y 是 a 函数的局部变量。</span>
+</code></pre></div><h2 id="let"><a href="#let" class="header-anchor">#</a> let</h2> <ul><li>用法与 var 用法一致，语义上有所不同</li> <li>用<code>let</code>声明一个变量，使用的是<code>词法作用域</code>或<code>块级作用域</code>。</li> <li>块级作用域变量：在包含他们的块或<code>for</code>循环以外是不能访问的。</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>input<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>input<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// a 可以访问</span>
+    <span class="token keyword">let</span> b <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> b<span class="token punctuation">;</span> <span class="token comment">// error b 不能访问</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>在 catch 语句里声明的变量也具有同样的作用域规则。</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">try</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token string">'oh no!'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Oh well.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Error: 'e' doesn't exist here</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>块级作用域的变量不能在声明之前读或写，虽然这些变量始终存在于“他们的作用域里”，但是直到声明他们的代码之前的区域都属于<code>暂时性死区</code>。</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code>a<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">//illegal to use 'a' before it's declared; 在声明之前 a 是非法的。</span>
+<span class="token keyword">let</span> a<span class="token punctuation">;</span>
+</code></pre></div><ul><li>可以一个拥有块级作用域变量被声明前获取它, 只是不能在变量声明前去调用这个函数。</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 不能在 `a` 被声明前调用`foo`</span>
+<span class="token comment">// 运行时应该抛出错误</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> a<span class="token punctuation">;</span>
+</code></pre></div><h3 id="重定义以及屏蔽"><a href="#重定义以及屏蔽" class="header-anchor">#</a> 重定义以及屏蔽</h3> <ul><li><code>var</code> 声明时，不管声明多少次，只会得到 1 个</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// 所有x 的声明实际上都引用一个相同的x</span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> x<span class="token punctuation">;</span>
+  <span class="token keyword">var</span> x<span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> x<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><code>let</code> 声明时，同在一个作用域内不能声明相同的变量。</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// error: interface with parameter declaration</span>
+  <span class="token comment">// 报错：属性已经声明</span>
+  <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span> <span class="token comment">// error: can't have both declaration of 'x';</span>
+  <span class="token comment">// x 不能重复声明</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>块级作用域变量需要在明显不同的块里声明</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>condition<span class="token punctuation">,</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// return 0</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// return 100</span>
+</code></pre></div><ul><li>一个嵌套作用域引入一个行为称作屏蔽。(尽量避免使用屏蔽，可以用不同变量名)</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// 内层循环的 i 可以屏蔽掉外层循环的 i</span>
+<span class="token keyword">function</span> <span class="token function">sumMatrix</span><span class="token punctuation">(</span>matrix<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> matrix<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> currentRow <span class="token operator">=</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> currentRow<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      sum <span class="token operator">+=</span> currentRow<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>当<code>let</code>声明在循环体时，不仅引入一个新的变量环境，而且针对每次迭代都会创建一个新作用域。</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span> <span class="token operator">*</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果</span>
+<span class="token comment">// 0, 1, 2, 3, 4, 5, 6, 7, 8, 9;</span>
+</code></pre></div><h2 id="const"><a href="#const" class="header-anchor">#</a> const</h2> <ul><li>与<code>let</code> 拥有相同的作用域规则，但是不能重新赋值。</li> <li>声明是必须初始化。</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">const</span> numLivesForCat <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> kitty <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'Aurora'</span><span class="token punctuation">,</span>
+  numLives<span class="token operator">:</span> numLivesForCat<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Error 不能再次赋值</span>
+kitty <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'Danielle'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <div class="article-copyright"><ul><li class="article-copyright__item"><strong class="article-copyright__title">Last-updated<span>:</span></strong> <p class="article-copyright__text">3/15/2022, 8:58:01 AM</p></li> <li class="article-copyright__item"><strong class="article-copyright__title">Copyright<span>:</span></strong> <p class="article-copyright__text">自由转载-非商用-禁止演绎-保持署名（<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC
+                BY-NC-ND 4.0</a>）</p></li> <li class="article-copyright__item"><strong class="article-copyright__title">Link<span>:</span></strong> <p class="article-copyright__text"><a href="https://xiaodaweb.github.io//post/2022/03/13/ts-variable-declare.html" title="typescript 之 变量声明">https://xiaodaweb.github.io//post/2022/03/13/ts-variable-declare.html</a></p></li></ul></div> <!----></div> <div class="article-footer"><ul class="post-tag"><li class="post-tag__item"><a href="/tags/typescript"><span># typescript</span></a></li></ul> <div class="post-operate"><a href="/post/2022/03/12/ts-basic-type.html" class="post-operate__prev">typescript 之 基础类型</a> <a href="/post/2022/03/15/ts-interface.html" class="post-operate__next">typescript 之 接口</a></div> <!----></div></article></div></div> <svg style="display:none;"><symbol id="theme-icon-auto" viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM4 16c0-6.627 5.373-12 12-12v24c-6.627 0-12-5.373-12-12z"></path></symbol> <symbol id="theme-icon-sun" viewBox="0 0 32 32"><path d="M16 26c1.105 0 2 0.895 2 2v2c0 1.105-0.895 2-2 2s-2-0.895-2-2v-2c0-1.105 0.895-2 2-2zM16 6c-1.105 0-2-0.895-2-2v-2c0-1.105 0.895-2 2-2s2 0.895 2 2v2c0 1.105-0.895 2-2 2zM30 14c1.105 0 2 0.895 2 2s-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2zM6 16c0 1.105-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2c1.105 0 2 0.895 2 2zM25.899 23.071l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0zM6.101 8.929l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0zM25.899 8.929c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414zM6.101 23.071c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414z"></path> <path d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 8-3.582 8-8s-3.582-8-8-8zM16 21c-2.761 0-5-2.239-5-5s2.239-5 5-5 5 2.239 5 5-2.239 5-5 5z"></path></symbol> <symbol id="theme-icon-moon" viewBox="0 0 18 18"><path d="M7.246 3.255c-0.251 0.828-0.322 1.71-0.198 2.597 0.366 2.63 2.455 4.723 5.080 5.089 0.282 0.040 0.568 0.060 0.85 0.060 0.599 0 1.184-0.087 1.742-0.257-0.674 2.215-2.642 3.926-4.973 4.21-0.254 0.031-0.51 0.047-0.762 0.047-1.713 0-3.349-0.738-4.486-2.024-1.152-1.304-1.669-2.987-1.457-4.739 0.284-2.335 1.992-4.307 4.204-4.982zM8.985 1c-0.362 0-0.731 0.024-1.104 0.075-3.543 0.48-6.388 3.364-6.82 6.92-0.592 4.867 3.184 9.005 7.924 9.005 0.33 0 0.665-0.020 1.003-0.062 3.549-0.433 6.428-3.283 6.907-6.833 0.052-0.383 0.076-0.761 0.075-1.134-0.002-0.583-0.482-0.972-0.996-0.972-0.209 0-0.424 0.065-0.614 0.207-0.665 0.498-1.489 0.793-2.383 0.793-0.188 0-0.38-0.013-0.574-0.040-1.732-0.242-3.137-1.649-3.378-3.385-0.155-1.115 0.149-2.156 0.751-2.963 0.415-0.657 0.025-1.609-0.764-1.612-0.009 0-0.018 0-0.028 0v0z"></path></symbol> <symbol id="theme-icon-palette" viewBox="0 0 1024 1024"><path d="M745.984 512q25.984 0 45.013333-18.005333t18.986667-45.994667-18.986667-45.994667-45.013333-18.005333-45.013333 18.005333-18.986667 45.994667 18.986667 45.994667 45.013333 18.005333zM617.984 342.016q25.984 0 45.013333-18.986667t18.986667-45.013333-18.986667-45.013333-45.013333-18.986667-45.013333 18.986667-18.986667 45.013333 18.986667 45.013333 45.013333 18.986667zM406.016 342.016q25.984 0 45.013333-18.986667t18.986667-45.013333-18.986667-45.013333-45.013333-18.986667-45.013333 18.986667-18.986667 45.013333 18.986667 45.013333 45.013333 18.986667zM278.016 512q25.984 0 45.013333-18.005333t18.986667-45.994667-18.986667-45.994667-45.013333-18.005333-45.013333 18.005333-18.986667 45.994667 18.986667 45.994667 45.013333 18.005333zM512 128q157.994667 0 271.018667 100.010667t112.981333 242.005333q0 88.021333-63.018667 150.016t-150.997333 61.994667l-73.984 0q-27.989333 0-45.994667 18.986667t-18.005333 45.013333q0 22.016 16 41.984t16 43.989333q0 27.989333-18.005333 45.994667t-45.994667 18.005333q-160 0-272-112t-112-272 112-272 272-112z" p-id="10529"></path></symbol> </svg></div><div class="global-ui"><div class="float-menu-wrap"><!----> <div class="float-menu__list"><span class="icon-up"></span> <span title="auto" class="theme-mode-setting"><svg class="theme-icon theme-icon-auto"><use xlink:href="#theme-icon-auto"></use></svg></span> <!----> <span class="icon-toc"></span> <span class="icon-search"></span></div> <div class="float-menu"><svg width="100%" height="100%" class="float-menu__progress"><circle stroke-dasharray="0% 301.59289474462014%" stroke="currentcolor" stroke-width="2%" fill="none" r="48%" cx="50%" cy="50%"></circle></svg> <div class="float-menu__dot"></div></div></div><div class="theme-search" style="display:none;"><div class="theme-search__inner"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <a class="icon-exit"></a></div></div></div></div>
+    <script src="/assets/js/app.69e19725.js" defer></script><script src="/assets/js/4.359cab9d.js" defer></script><script src="/assets/js/25.c6435ee4.js" defer></script><script src="/assets/js/8.51cdb36d.js" defer></script>
+  </body>
+</html>

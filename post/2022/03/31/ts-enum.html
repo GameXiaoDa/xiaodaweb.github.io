@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>typescript 之 枚举 | 小丶达</title>
+    <link rel="shortcut icon" href="/logo.jpg"/>
+    <meta name="generator" content="VuePress 1.9.7"/>
+    <link rel="alternate" type="application/rss+xml" href="https://xiaodaweb.github.io/rss.xml" title="小丶达 RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://xiaodaweb.github.io/feed.atom" title="小丶达 Atom Feed">
+    <link rel="alternate" type="application/json" href="https://xiaodaweb.github.io/feed.json" title="小丶达 JSON Feed">
+    <meta name="description" content="人生路漫漫，留下一笔精彩">
+    
+    <link rel="preload" href="/assets/css/0.styles.0d4b6226.css" as="style"><link rel="preload" href="/assets/js/app.69e19725.js" as="script"><link rel="preload" href="/assets/js/4.359cab9d.js" as="script"><link rel="preload" href="/assets/js/19.b8e91840.js" as="script"><link rel="preload" href="/assets/js/8.51cdb36d.js" as="script"><link rel="prefetch" href="/assets/js/10.a847f65c.js"><link rel="prefetch" href="/assets/js/11.54984bb1.js"><link rel="prefetch" href="/assets/js/12.88f565f3.js"><link rel="prefetch" href="/assets/js/13.91e3e342.js"><link rel="prefetch" href="/assets/js/14.d8efd52b.js"><link rel="prefetch" href="/assets/js/15.86d504bd.js"><link rel="prefetch" href="/assets/js/16.d900dbb6.js"><link rel="prefetch" href="/assets/js/17.caaa48be.js"><link rel="prefetch" href="/assets/js/18.d173c369.js"><link rel="prefetch" href="/assets/js/20.71edabcf.js"><link rel="prefetch" href="/assets/js/21.451982cc.js"><link rel="prefetch" href="/assets/js/22.019ff8d9.js"><link rel="prefetch" href="/assets/js/23.e68e557d.js"><link rel="prefetch" href="/assets/js/24.4de953e0.js"><link rel="prefetch" href="/assets/js/25.c6435ee4.js"><link rel="prefetch" href="/assets/js/5.9e82a8e9.js"><link rel="prefetch" href="/assets/js/6.9031de66.js"><link rel="prefetch" href="/assets/js/7.1895bdb8.js"><link rel="prefetch" href="/assets/js/9.81cb041d.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.1f10ba18.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.b98c1529.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d4b6226.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="theme-sidebar"><div class="theme-sidebar__inner"><div class="theme-header"><a href="/" class="theme-header__logo router-link-active"><img draggable="false" src="/logo.jpg" alt="logo" width="160" height="160" class="theme-header__picture"> <!----></a> <a href="/" class="theme-header__name router-link-active">
+        小丶达
+      </a> <p class="theme-header__slogan">人生路漫漫，留下一笔精彩</p></div> <div class="theme-SubNav"><a href="/archives/" class="theme-SubNav__item"><span class="theme-SubNav__count">14</span> <span class="theme-SubNav__name">Archives</span></a> <a href="/categories/" class="theme-SubNav__item"><span class="theme-SubNav__count">4</span> <span class="theme-SubNav__name">Categories</span></a> <a href="/tags/" class="theme-SubNav__item"><span class="theme-SubNav__count">7</span> <span class="theme-SubNav__name">Tags</span></a></div> <div class="theme-nav"><div class="search-box mt-7"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div> <!----></nav></div> <div class="theme-footer"><div class="social-links"><a target="_blank" rel="external nofollow noopener" title="email" href="mailto:1010161292@qq.com" class="icon-email">email</a><a target="_blank" rel="external nofollow noopener" title="github" href="https://github.com/xiaodaweb" class="icon-github">github</a><a target="_blank" rel="external nofollow noopener" title="qq" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1010161292&amp;site=qq&amp;menu=yes" class="icon-qq">qq</a></div> <p class="copyright"></p> <p class="powered"><span>Powered by <a href="https://vuepress.vuejs.org" target="_blank" rel="external nofollow noopener">VuePress</a></span> <span class="φde"> Theme - <a href="https://github.com/80maker/vuepress-theme-maker" target="_blank" rel="external nofollow noopener">Maker</a></span></p></div></div></div> <div class="theme-main"><div class="theme-main__inner post"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting"><header class="article__header"><h1 itemprop="name headline" class="post-title">
+          typescript 之 枚举
+        </h1> <div class="post-meta"><!----> <div class="post-meta__date"><i class="icon-calendar"></i> <time pubdate itemprop="datePublished" datetime="2022-3-31">
+      Mar 31, 2022
+    </time></div> <div class="post-meta__cates"><i class="icon-cate"></i> <a href="/categories/typescript/">
+      typescript
+    </a></div> <div class="post-meta__reading"><i class="icon-time"></i>
+    1.2k words in 4 min
+  </div> <!----></div></header> <div class="article-con"><div itemprop="articleBody" class="article-content content__default copy-code-enabled"><blockquote><p>枚举可以定义一些带名字的常量。
+使用枚举可以清晰地表达意图或创建一组有区别的用例</p></blockquote> <h2 id="数字枚举"><a href="#数字枚举" class="header-anchor">#</a> 数字枚举</h2> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">enum</span> Direction <span class="token punctuation">{</span>
+  Up <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  Down<span class="token punctuation">,</span>
+  Left<span class="token punctuation">,</span>
+  Right<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Direction<span class="token punctuation">.</span>Left<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
+</code></pre></div><p><code>Up</code>初始化为 <code>1</code>，后面的成员会从<code>1</code>开始自动增长。所以 <code>Up</code>为<code>1</code>，<code>Down</code>为<code>2</code>，<code>Left</code>为<code>3</code>，<code>Right</code>为<code>4</code>。</p> <p>不使用初始化，成员的值从<code>0</code>开始递增</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">enum</span> Direction <span class="token punctuation">{</span>
+  Up<span class="token punctuation">,</span>
+  Down<span class="token punctuation">,</span>
+  Left<span class="token punctuation">,</span>
+  Right<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Direction<span class="token punctuation">.</span>Up<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Direction<span class="token punctuation">.</span>Left<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+</code></pre></div><h2 id="字符串枚举"><a href="#字符串枚举" class="header-anchor">#</a> 字符串枚举</h2> <blockquote><p>字符串枚举中，每个成员都必须用字符串字面量。</p></blockquote> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">enum</span> Direction <span class="token punctuation">{</span>
+  Up <span class="token operator">=</span> <span class="token string">'UP'</span><span class="token punctuation">,</span>
+  Down <span class="token operator">=</span> <span class="token string">'DOWN'</span><span class="token punctuation">,</span>
+  Left <span class="token operator">=</span> <span class="token string">'LEFT'</span><span class="token punctuation">,</span>
+  Right <span class="token operator">=</span> <span class="token string">'RIGHT'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>由于字符串枚举没有自增长，字符串枚举可以很好的序列化。
+数字枚举的运行时的值，通常比较难读取，而且不能表达有用的信息。
+字符串枚举允许你提供一个运行时有意义的并且可读的值，独立于枚举成员的名字。</p></blockquote> <h2 id="异构枚举-不推荐"><a href="#异构枚举-不推荐" class="header-anchor">#</a> 异构枚举 (不推荐)</h2> <p>枚举可以混合字符串和数字成员</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">enum</span> BooleanLikeHeterogeneousEnum <span class="token punctuation">{</span>
+  No <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  Yes <span class="token operator">=</span> <span class="token string">'Yes'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="计算的和常量成员"><a href="#计算的和常量成员" class="header-anchor">#</a> 计算的和常量成员</h2> <p>每个枚举成员都带有一个值，可以是常量或计算出来的。当满足如下条件时，枚举成员被当作是常量：</p> <ul><li>枚举的第一个成员且没有初始化器，这种情况下它被赋予值<code>0</code>：</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">enum</span> <span class="token constant">E</span> <span class="token punctuation">{</span>
+  x<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>不带有初始化器且之前的枚举成员是一个数字常量。这种情况下，当前枚举成员的值为上一个枚举成员的值加<code>1</code></li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">enum</span> <span class="token constant">E1</span> <span class="token punctuation">{</span>
+  <span class="token constant">X</span><span class="token punctuation">,</span>
+  <span class="token constant">Y</span><span class="token punctuation">,</span>
+  <span class="token constant">Z</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">enum</span> <span class="token constant">E2</span> <span class="token punctuation">{</span>
+  <span class="token constant">A</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token constant">B</span><span class="token punctuation">,</span>
+  <span class="token constant">C</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><p>枚举成员使用常量枚举表达式初始化。常量枚举表达式是 TypeScript 表达式的子集，可以在编译阶段求值。满足一下条件，就是一个常量枚举表达式：</p> <ul><li>一个枚举表达式字面量(主要是字符串字面量或数字字面量)</li> <li>一个对之前定义的常量枚举成员的引用(可以是在不同的枚举类型中定义)</li> <li>带括号的常量枚举表达式</li> <li>一元运算符 <code>+</code>, <code>-</code>, <code>~</code>其中之一应用在了常量枚举表达式</li> <li>常量枚举表达式做为二元运算符<code>+</code>,<code>-</code>,<code>*</code>,<code>/</code>,<code>&lt;&lt;</code>,<code>&gt;&gt;</code>,<code>&gt;&gt;&gt;</code>,<code>&amp;</code>,<code>|</code>,<code>^</code>的操作对象。若常数枚举表达式求值后为<code>NaN</code>或<code>Infinity</code>，则会在编译阶段报错。</li></ul></li></ul> <blockquote><p>其他情况的枚举成员被当作是需要计算的出的值。</p></blockquote> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">enum</span> FileAccess <span class="token punctuation">{</span>
+  None<span class="token punctuation">,</span>
+  Read <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  Write <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  ReadWrite <span class="token operator">=</span> Read <span class="token operator">|</span> Write<span class="token punctuation">,</span>
+  <span class="token comment">// 计算 值</span>
+  <span class="token constant">G</span> <span class="token operator">=</span> <span class="token string">'123'</span><span class="token punctuation">.</span>length<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="联合枚举与枚举成员的类型"><a href="#联合枚举与枚举成员的类型" class="header-anchor">#</a> 联合枚举与枚举成员的类型</h2> <p>存在一种特殊的非计算的常量枚举成员的子集：字面量枚举成员。
+字面量枚举成员：指不带初始值的常量枚举成员，或者是值被初始化为</p> <ul><li>任何字符串字面量 (例如：&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;)</li> <li>任何数字字面量 (例如：1,100)</li> <li>应用了一元<code>-</code>符号的数字字面量 (例如：-1, -100)</li></ul> <p>当所有枚举成员都拥有字面量枚举值时，就带有一种特殊的语义</p> <p>枚举成员称为类型</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">enum</span> ShapeKind <span class="token punctuation">{</span>
+  Circle<span class="token punctuation">,</span>
+  Square<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Circle</span> <span class="token punctuation">{</span>
+  kind<span class="token operator">:</span> ShapeKind<span class="token punctuation">.</span>Circle<span class="token punctuation">;</span>
+  radius<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Square</span> <span class="token punctuation">{</span>
+  kind<span class="token operator">:</span> ShapeKind<span class="token punctuation">.</span>Square<span class="token punctuation">;</span>
+  sideLength<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> c<span class="token operator">:</span> Circle <span class="token operator">=</span> <span class="token punctuation">{</span>
+  kind<span class="token operator">:</span> ShapeKind<span class="token punctuation">.</span>Circle<span class="token punctuation">,</span>
+  radius<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="运行时枚举"><a href="#运行时枚举" class="header-anchor">#</a> 运行时枚举</h2> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">enum</span> <span class="token constant">E</span> <span class="token punctuation">{</span>
+  <span class="token constant">X</span><span class="token punctuation">,</span>
+  <span class="token constant">Y</span><span class="token punctuation">,</span>
+  <span class="token constant">Z</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>obj<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token constant">X</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> obj<span class="token punctuation">.</span><span class="token constant">X</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token constant">E</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="反向映射"><a href="#反向映射" class="header-anchor">#</a> 反向映射</h2> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">enum</span> Enum <span class="token punctuation">{</span>
+  <span class="token constant">A</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> a <span class="token operator">=</span> Enum<span class="token punctuation">.</span><span class="token constant">A</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> nameOfA <span class="token operator">=</span> Enum<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nameOfA<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// A</span>
+</code></pre></div><p>通过枚举值获取的枚举名</p> <h2 id="const-枚举-常量枚举"><a href="#const-枚举-常量枚举" class="header-anchor">#</a> <code>const</code> 枚举(常量枚举)</h2> <p>避免在额外生成的代码上的开销和额外的非直接的对枚举成员的访问。可以使用<code>const</code>枚举。</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">const</span> <span class="token keyword">enum</span> Enum <span class="token punctuation">{</span>
+  <span class="token constant">A</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token constant">B</span> <span class="token operator">=</span> <span class="token constant">A</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>常量枚举只能使用常量枚举表达式，并且不同于常规的枚举，在编译阶段会被删除。
+常量枚举成员在使用的地方会被内联进去。常量枚举不允许包含计算成员</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">const</span> <span class="token keyword">enum</span> Direction <span class="token punctuation">{</span>
+  Up<span class="token punctuation">,</span>
+  Down<span class="token punctuation">,</span>
+  Left<span class="token punctuation">,</span>
+  Right<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> directions <span class="token operator">=</span> <span class="token punctuation">[</span>
+  Direction<span class="token punctuation">.</span>Up<span class="token punctuation">,</span>
+  Direction<span class="token punctuation">.</span>Down<span class="token punctuation">,</span>
+  Direction<span class="token punctuation">.</span>Left<span class="token punctuation">,</span>
+  Direction<span class="token punctuation">.</span>Right<span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 编译后的代码</span>
+<span class="token keyword">var</span> directions <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token comment">/* Up */</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token comment">/* Down */</span><span class="token punctuation">,</span> <span class="token number">2</span> <span class="token comment">/* Left */</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token comment">/* Right */</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="外部枚举"><a href="#外部枚举" class="header-anchor">#</a> 外部枚举</h2> <blockquote><p>用来描述应该存在的枚举类型的形状。</p></blockquote> <ul><li>外部枚举和正常枚举的区别</li></ul> <ol><li>在正常枚举里，没有初始化方法的成员被当成常数成员。</li> <li>对于外部枚举里，没有初始化方法时被当作需要经过计算的</li></ol> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">declare</span> <span class="token keyword">enum</span> Enum <span class="token punctuation">{</span>
+  <span class="token constant">A</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token constant">B</span><span class="token punctuation">,</span>
+  <span class="token constant">C</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">declare</span> <span class="token keyword">enum</span> <span class="token constant">E</span> <span class="token punctuation">{</span>
+  <span class="token constant">A</span><span class="token punctuation">,</span>
+  <span class="token constant">B</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>e<span class="token operator">:</span> <span class="token constant">E</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> e<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token constant">E</span><span class="token punctuation">.</span><span class="token constant">A</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 无任何输出</span>
+</code></pre></div><div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">declare</span> <span class="token keyword">const</span> <span class="token keyword">enum</span> <span class="token constant">E</span> <span class="token punctuation">{</span>
+  <span class="token constant">A</span><span class="token punctuation">,</span>
+  <span class="token constant">B</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>e<span class="token operator">:</span> <span class="token constant">E</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> e<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token constant">E</span><span class="token punctuation">.</span><span class="token constant">A</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+</code></pre></div><p>从上面代码运行结果看，</p> <ul><li>外部枚举只有<code>declare</code>时候，只是个声明，在不会被编译。</li> <li>外部枚举只有<code>declare const</code>时候，不只是个声明，不会编译，但是运行阶段会获取到常量值。</li></ul></div> <div class="article-copyright"><ul><li class="article-copyright__item"><strong class="article-copyright__title">Last-updated<span>:</span></strong> <p class="article-copyright__text">4/1/2022, 10:15:31 AM</p></li> <li class="article-copyright__item"><strong class="article-copyright__title">Copyright<span>:</span></strong> <p class="article-copyright__text">自由转载-非商用-禁止演绎-保持署名（<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC
+                BY-NC-ND 4.0</a>）</p></li> <li class="article-copyright__item"><strong class="article-copyright__title">Link<span>:</span></strong> <p class="article-copyright__text"><a href="https://xiaodaweb.github.io//post/2022/03/31/ts-enum.html" title="typescript 之 枚举">https://xiaodaweb.github.io//post/2022/03/31/ts-enum.html</a></p></li></ul></div> <!----></div> <div class="article-footer"><ul class="post-tag"><li class="post-tag__item"><a href="/tags/typescript"><span># typescript</span></a></li></ul> <div class="post-operate"><a href="/post/2022/03/30/ts-genericity.html" class="post-operate__prev">typescript 之 泛型</a> <a href="/post/2022/04/02/ts-type-deduction.html" class="post-operate__next">typescript 之 类型推论</a></div> <!----></div></article></div></div> <svg style="display:none;"><symbol id="theme-icon-auto" viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM4 16c0-6.627 5.373-12 12-12v24c-6.627 0-12-5.373-12-12z"></path></symbol> <symbol id="theme-icon-sun" viewBox="0 0 32 32"><path d="M16 26c1.105 0 2 0.895 2 2v2c0 1.105-0.895 2-2 2s-2-0.895-2-2v-2c0-1.105 0.895-2 2-2zM16 6c-1.105 0-2-0.895-2-2v-2c0-1.105 0.895-2 2-2s2 0.895 2 2v2c0 1.105-0.895 2-2 2zM30 14c1.105 0 2 0.895 2 2s-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2zM6 16c0 1.105-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2c1.105 0 2 0.895 2 2zM25.899 23.071l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0zM6.101 8.929l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0zM25.899 8.929c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414zM6.101 23.071c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414z"></path> <path d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 8-3.582 8-8s-3.582-8-8-8zM16 21c-2.761 0-5-2.239-5-5s2.239-5 5-5 5 2.239 5 5-2.239 5-5 5z"></path></symbol> <symbol id="theme-icon-moon" viewBox="0 0 18 18"><path d="M7.246 3.255c-0.251 0.828-0.322 1.71-0.198 2.597 0.366 2.63 2.455 4.723 5.080 5.089 0.282 0.040 0.568 0.060 0.85 0.060 0.599 0 1.184-0.087 1.742-0.257-0.674 2.215-2.642 3.926-4.973 4.21-0.254 0.031-0.51 0.047-0.762 0.047-1.713 0-3.349-0.738-4.486-2.024-1.152-1.304-1.669-2.987-1.457-4.739 0.284-2.335 1.992-4.307 4.204-4.982zM8.985 1c-0.362 0-0.731 0.024-1.104 0.075-3.543 0.48-6.388 3.364-6.82 6.92-0.592 4.867 3.184 9.005 7.924 9.005 0.33 0 0.665-0.020 1.003-0.062 3.549-0.433 6.428-3.283 6.907-6.833 0.052-0.383 0.076-0.761 0.075-1.134-0.002-0.583-0.482-0.972-0.996-0.972-0.209 0-0.424 0.065-0.614 0.207-0.665 0.498-1.489 0.793-2.383 0.793-0.188 0-0.38-0.013-0.574-0.040-1.732-0.242-3.137-1.649-3.378-3.385-0.155-1.115 0.149-2.156 0.751-2.963 0.415-0.657 0.025-1.609-0.764-1.612-0.009 0-0.018 0-0.028 0v0z"></path></symbol> <symbol id="theme-icon-palette" viewBox="0 0 1024 1024"><path d="M745.984 512q25.984 0 45.013333-18.005333t18.986667-45.994667-18.986667-45.994667-45.013333-18.005333-45.013333 18.005333-18.986667 45.994667 18.986667 45.994667 45.013333 18.005333zM617.984 342.016q25.984 0 45.013333-18.986667t18.986667-45.013333-18.986667-45.013333-45.013333-18.986667-45.013333 18.986667-18.986667 45.013333 18.986667 45.013333 45.013333 18.986667zM406.016 342.016q25.984 0 45.013333-18.986667t18.986667-45.013333-18.986667-45.013333-45.013333-18.986667-45.013333 18.986667-18.986667 45.013333 18.986667 45.013333 45.013333 18.986667zM278.016 512q25.984 0 45.013333-18.005333t18.986667-45.994667-18.986667-45.994667-45.013333-18.005333-45.013333 18.005333-18.986667 45.994667 18.986667 45.994667 45.013333 18.005333zM512 128q157.994667 0 271.018667 100.010667t112.981333 242.005333q0 88.021333-63.018667 150.016t-150.997333 61.994667l-73.984 0q-27.989333 0-45.994667 18.986667t-18.005333 45.013333q0 22.016 16 41.984t16 43.989333q0 27.989333-18.005333 45.994667t-45.994667 18.005333q-160 0-272-112t-112-272 112-272 272-112z" p-id="10529"></path></symbol> </svg></div><div class="global-ui"><div class="float-menu-wrap"><!----> <div class="float-menu__list"><span class="icon-up"></span> <span title="auto" class="theme-mode-setting"><svg class="theme-icon theme-icon-auto"><use xlink:href="#theme-icon-auto"></use></svg></span> <!----> <span class="icon-toc"></span> <span class="icon-search"></span></div> <div class="float-menu"><svg width="100%" height="100%" class="float-menu__progress"><circle stroke-dasharray="0% 301.59289474462014%" stroke="currentcolor" stroke-width="2%" fill="none" r="48%" cx="50%" cy="50%"></circle></svg> <div class="float-menu__dot"></div></div></div><div class="theme-search" style="display:none;"><div class="theme-search__inner"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <a class="icon-exit"></a></div></div></div></div>
+    <script src="/assets/js/app.69e19725.js" defer></script><script src="/assets/js/4.359cab9d.js" defer></script><script src="/assets/js/19.b8e91840.js" defer></script><script src="/assets/js/8.51cdb36d.js" defer></script>
+  </body>
+</html>
